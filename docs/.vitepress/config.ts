@@ -46,8 +46,8 @@ export default defineConfig({
 
 function nav() {
   return [
-    { text: 'Guide', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
-    { text: 'Configs', link: '/config/introduction', activeMatch: '/config/' },
+    { text: '指南', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
+    { text: '配置', link: '/config/introduction', activeMatch: '/config/' },
     {
       text: version,
       items: [
@@ -67,31 +67,31 @@ function nav() {
 function sidebarGuide() {
   return [
     {
-      text: 'Introduction',
+      text: '介绍',
       collapsible: true,
       items: [
-        { text: 'What is VitePress?', link: '/guide/what-is-vitepress' },
-        { text: 'Getting Started', link: '/guide/getting-started' },
-        { text: 'Configuration', link: '/guide/configuration' },
-        { text: 'Deploying', link: '/guide/deploying' }
+        { text: '什么是VitePress?', link: '/guide/what-is-vitepress' },
+        { text: '快速上手', link: '/guide/getting-started' },
+        { text: '配置', link: '/guide/configuration' },
+        { text: '部署', link: '/guide/deploying' }
       ]
     },
     {
-      text: 'Writing',
+      text: '编写',
       collapsible: true,
       items: [
         { text: 'Markdown', link: '/guide/markdown' },
-        { text: 'Asset Handling', link: '/guide/asset-handling' },
+        { text: '静态资源', link: '/guide/asset-handling' },
         { text: 'Frontmatter', link: '/guide/frontmatter' },
-        { text: 'Using Vue in Markdown', link: '/guide/using-vue' },
-        { text: 'API Reference', link: '/guide/api' }
+        { text: '在Markdown中使用Vue', link: '/guide/using-vue' },
+        { text: 'API参考', link: '/guide/api' }
       ]
     },
     {
-      text: 'Theme',
+      text: '主题',
       collapsible: true,
       items: [
-        { text: 'Introduction', link: '/guide/theme-introduction' },
+        { text: '介绍', link: '/guide/theme-introduction' },
         { text: 'Nav', link: '/guide/theme-nav' },
         { text: 'Sidebar', link: '/guide/theme-sidebar' },
         { text: 'Prev Next Link', link: '/guide/theme-prev-next-link' },
@@ -106,15 +106,15 @@ function sidebarGuide() {
       ]
     },
     {
-      text: 'Migrations',
+      text: '迁移',
       collapsible: true,
       items: [
         {
-          text: 'Migration from VuePress',
+          text: '从 VuePress 迁移',
           link: '/guide/migration-from-vuepress'
         },
         {
-          text: 'Migration from VitePress 0.x',
+          text: '从 VitePress 0.x 迁移',
           link: '/guide/migration-from-vitepress-0'
         }
       ]
@@ -125,12 +125,12 @@ function sidebarGuide() {
 function sidebarConfig() {
   return [
     {
-      text: 'Config',
+      text: '配置',
       items: [
-        { text: 'Introduction', link: '/config/introduction' },
-        { text: 'App Configs', link: '/config/app-configs' },
-        { text: 'Theme Configs', link: '/config/theme-configs' },
-        { text: 'Frontmatter Configs', link: '/config/frontmatter-configs' }
+        { text: '介绍', link: '/config/introduction' },
+        { text: '应用配置', link: '/config/app-configs' },
+        { text: '主题配置', link: '/config/theme-configs' },
+        { text: 'Frontmatter 配置', link: '/config/frontmatter-configs' }
       ]
     }
   ]

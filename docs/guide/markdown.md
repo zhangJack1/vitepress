@@ -1,13 +1,16 @@
 # Markdown Extensions
 
+VitePress 带有内置的 Markdown 扩展。
 VitePress comes with built in Markdown Extensions.
 
 ## Header Anchors
 
+标头会自动应用锚链接。 可以使用 `markdown.anchor` 选项配置锚的渲染。
 Headers automatically get anchor links applied. Rendering of anchors can be configured using the `markdown.anchor` option.
 
 ## Links
 
+内部和外部链接都得到特殊处理。
 Both internal and external links gets special treatments.
 
 ### Internal Links
