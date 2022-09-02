@@ -8,6 +8,7 @@ export default defineConfig({
 
   lastUpdated: true,
   cleanUrls: 'without-subfolders',
+  base: '/vitepress/',
 
   themeConfig: {
     nav: nav(),
