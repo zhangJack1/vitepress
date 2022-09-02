@@ -1,6 +1,6 @@
 # Frontmatter Configs
 
-Frontmatter enables page based configuration. On every markdown, you’re free to add Any settings to override any global app or theme configs. Also, there are configs which you can only define in Frontmatter.
+Frontmatter 支持基于页面的配置。在每个 markdown 文件，您都可以自由添加任何设置以覆盖任何全局应用程序或主题配置。 此外，有些配置只能在 Frontmatter 中定义。
 
 ```yaml
 ---
@@ -9,7 +9,7 @@ editLink: true
 ---
 ```
 
-You may access frontmatter by `$frontmatter` helper inside any markdown file.
+您可以通过 Markdown 文件中的 `$frontmatter` 辅助函数访问 frontmatter 的内容。
 
 ```md
 {{ $frontmatter.title }}
@@ -19,7 +19,7 @@ You may access frontmatter by `$frontmatter` helper inside any markdown file.
 
 - Type: `string`
 
-Title for the page. It's same as [config.title](../config/app-configs#title), and it overrides the app config.
+页面的标题。 它与 [config.title](../config/app-configs#title) 相同，它会覆盖应用程序配置。
 
 ```yaml
 ---
@@ -31,7 +31,7 @@ title: VitePress
 
 - Type: `string | boolean`
 
-The suffix for the title. It's same as [config.titleTemplate](../config/app-configs#titletemplate), and it overrides the app config.
+标题的后缀。 它与 [config.titleTemplate](../config/app-configs#titletemplate) 相同，它会覆盖应用程序配置。
 
 ```yaml
 ---
@@ -44,7 +44,7 @@ titleTemplate: Vite & Vue powered static site generator
 
 - Type: `string`
 
-Title for the page. It's same as [config.description](../config/app-configs#description), and it overrides the app config.
+页面的标题。 它与 [config.description](../config/app-configs#description) 相同，它会覆盖应用程序配置。
 
 ```yaml
 ---
@@ -56,7 +56,7 @@ description: VitePress
 
 - Type: `HeadConfig[]`
 
-Specify extra head tags to be injected:
+指定要注入的额外头部标签：
 
 ```yaml
 ---
@@ -81,7 +81,7 @@ type HeadConfig =
 - Type: `boolean`
 - Default: `true`
 
-Whether to display [Last Updated](../guide/theme-last-updated) text in the current page.
+是否在当前页面显示 [最近更新](../guide/theme-last-updated) 文本。
 
 ```yaml
 ---
@@ -94,11 +94,11 @@ lastUpdated: false
 - Type: `doc | home | page`
 - Default: `doc`
 
-Determines the layout of the page.
+指定页面的布局。
 
-- `doc` - It applies default documentation styles to the markdown content.
-- `home` - Special layout for "Home Page". You may add extra options such as `hero` and `features` to rappidly create beautiful landing page.
-- `page` - Behave similar to `doc` but it applies no styles to the content. Useful when you want to create a fully custom page.
+- `doc` - 它将默认文档样式应用于 markdown 内容。
+- `home` - “主页”的特殊布局。 您可以添加额外的选项，例如“hero”和“feature”，以快速创建漂亮的首页。
+- `page` - 类似于 `doc`，但它不将样式应用于内容。 当您想要创建一个完全自定义的页面时很有用。
 
 ```yaml
 ---
@@ -110,9 +110,9 @@ layout: doc
 
 - Type: `Hero`
 
-This option only takes effect when `layout` is set to `home`.
+此选项仅在 `layout` 设置为 `home` 时生效。
 
-It defines contents of home hero section.
+它定义了 home hero 部分的内容。
 
 ```yaml
 ---
@@ -165,9 +165,9 @@ interface HeroAction {
 
 - Type: `Feature[]`
 
-This option only takes effect when `layout` is set to `home`.
+此选项仅当 `layout` 设置为 `home` 时生效。
 
-It defines items to display in features section.
+它定义了要在特性部分显示的内容。
 
 ```yaml
 ---
@@ -205,7 +205,7 @@ interface Feature {
 - Type: `boolean`
 - Default: `true`
 
-If you want the right aside component in `doc` layout not to be shown, set this option to `false`.
+如果你不想在 `doc` 布局中显示右边的组件，设置该选项为 `false`。
 
 ```yaml
 ---

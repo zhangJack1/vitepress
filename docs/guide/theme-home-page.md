@@ -1,6 +1,6 @@
 # Home Page
 
-VitePress default theme provides a homepage layout, which you can also see used on [the homepage of this site](../). You may use it on any of your pages by specifying `layout: home` in the [frontmatter](./frontmatter).
+VitePress 默认主题提供主页布局，您也可以在 [本站主页](../) 上看到使用的主页布局。 您可以通过在任何页面 通过 [frontmatter](./frontmatter) 中指定 `layout: home` 使用它。
 
 ```yaml
 ---
@@ -8,11 +8,11 @@ layout: home
 ---
 ```
 
-However, this option alone wouldn't do much. You can add several different pre templated "sections" to the homepage by setting additional other options such as `hero` and `features`.
+但是，仅此选项不会有太大作用。 您可以通过设置额外的其他选项（例如`hero` 和 `features`）将几个不同的预模板“部分”添加到主页。
 
-## Hero Section
+## Hero 部分
 
-The Hero section comes at the top of the homepage. Here's how you can configure the Hero section.
+Hero 部分位于主页的顶部。 以下是配置 Hero 部分的方法。
 
 ```yaml
 ---
@@ -37,36 +37,34 @@ hero:
 
 ```ts
 interface Hero {
-  // The string shown top of `text`. Comes with brand color
-  // and expected to be short, such as product name.
+  // `text' 的字符串所示。带有品牌颜色，通常会很短，例如项目名称。
   name?: string
 
-  // The main text for the hero section. This will be defined
-  // as `h1` tag.
+  // hero 部分的文本。这将被定义成`h1`标签
   text: string
 
-  // Tagline displayed below `text`.
+  // Tagline 会展示在 `text` 下面.
   tagline?: string
 
-  // Action buttons to display in home hero section.
+  // action 按钮显示在 hero 区域。
   actions?: HeroAction[]
 }
 
 interface HeroAction {
-  // Color theme of the button. Defaults to `brand`.
+  // 按钮的的主题颜色，默认为 `brand`.
   theme?: 'brand' | 'alt'
 
-  // Label of the button.
+  // 按钮的文案.
   text: string
 
-  // Destination link of the button.
+  // 按钮链接.
   link: string
 }
 ```
 
-### Customizing the name color
+### 自定义名字颜色
 
-VitePress uses the brand color (`--vp-c-brand`) for the `name`. However, you may customize this color by overriding `--vp-home-hero-name-color` variable.
+VitePress 使用品牌颜色（`--vp-c-brand`）作为`name`。 但是，您可以通过覆盖 `--vp-home-hero-name-color` 变量来自定义此颜色。
 
 ```css
 :root {
@@ -74,7 +72,7 @@ VitePress uses the brand color (`--vp-c-brand`) for the `name`. However, you may
 }
 ```
 
-Also you may customize it further by combining `--vp-home-hero-name-background` to give the `name` gradient color.
+您也可以通过组合 `--vp-home-hero-name-background` 来进一步自定义它，以赋予 `name` 渐变颜色。
 
 ```css
 :root {
@@ -83,9 +81,9 @@ Also you may customize it further by combining `--vp-home-hero-name-background` 
 }
 ```
 
-## Features Section
+## Features 部分
 
-In Features section, you can list any number of features you would like to show right after the Hero section. To configure it, pass `features` option to the frontmatter.
+在 Features 部分，您可以 hero 部分之后列出您想要显示的任意数量的功能。 要配置它，请将 `features` 选项传递给 frontmatter。
 
 ```yaml
 ---
@@ -106,14 +104,13 @@ features:
 
 ```ts
 interface Feature {
-  // Show icon on each feature box. Currently, only emojis
-  // are supported.
+  // 在 feature 框里展示icon，目前只支持emoji
   icon?: string
 
-  // Title of the feature.
+  // feature 标题.
   title: string
 
-  // Details of the feature.
+  // feature 详情.
   details: string
 }
 ```

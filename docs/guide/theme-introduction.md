@@ -1,6 +1,6 @@
-# Theme Introduction
+# 主题介绍
 
-VitePress comes with its default theme providing many features out of the box. Learn more about each feature on its dedicated page listed below.
+VitePress 带有默认主题，并提供许多开箱即用的功能。通过下面列出的导航来了解有关每个功能的更多信息。
 
 - [Nav](./theme-nav)
 - [Sidebar](./theme-sidebar)
@@ -14,11 +14,11 @@ VitePress comes with its default theme providing many features out of the box. L
 - [Search](./theme-search)
 - [Carbon Ads](./theme-carbon-ads)
 
-If you don't find the features you're looking for, or you would rather create your own theme, you may customize VitePress to fit your requirements. In the following sections, we'll go through each way of customizing the VitePress theme.
+如果你没有找到所需的功能，或者您想创建自己的主题，您可以自定义 VitePress 以满足你的要求。 在下面，我们将介绍自定义 VitePress 主题的每种方式。
 
-## Using a Custom Theme
+## 使用自定义主题
 
-You can enable a custom theme by adding the `.vitepress/theme/index.js` or `.vitepress/theme/index.ts` file (the "theme entry file").
+您可以通过添加 `.vitepress/theme/index.js` 或 `.vitepress/theme/index.ts` 文件（“主题入口文件”）来启用自定义主题。
 
 ```
 .
@@ -31,7 +31,7 @@ You can enable a custom theme by adding the `.vitepress/theme/index.js` or `.vit
 └─ package.json
 ```
 
-A VitePress custom theme is simply an object containing four properties and is defined as follows:
+VitePress 自定义主题是一个只包含四个属性的对象，定义如下：
 
 ```ts
 interface Theme {
@@ -48,7 +48,7 @@ interface EnhanceAppContext {
 }
 ```
 
-The theme entry file should export the theme as its default export:
+主题入口文件应将主题作为其默认导出：
 
 ```js
 // .vitepress/theme/index.js
@@ -74,7 +74,7 @@ export default {
 }
 ```
 
-...where the `Layout` component could look like this:
+... `Layout` 组件会如下所示：
 
 ```vue
 <!-- .vitepress/theme/Layout.vue -->
@@ -86,9 +86,9 @@ export default {
 </template>
 ```
 
-The default export is the only contract for a custom theme. Inside your custom theme, it works just like a normal Vite + Vue 3 application. Do note the theme also needs to be [SSR-compatible](./using-vue#browser-api-access-restrictions).
+默认导出是自定义主题的唯一方式。 在自定义主题中，它就像普通的 Vite + Vue 3 应用程序一样工作。 注意，主题还需要 [SSR 兼容](./using-vue#browser-api-access-restrictions)。
 
-To distribute a theme, simply export the object in your package entry. To consume an external theme, import and re-export it from the custom theme entry:
+要分发主题，只需在包入口里导出对象。 要使用外部主题，请从自定义主题入口导入并重新导出：
 
 ```js
 // .vitepress/theme/index.js
@@ -97,11 +97,11 @@ import Theme from 'awesome-vitepress-theme'
 export default Theme
 ```
 
-## Extending the Default Theme
+## 扩展默认主题
 
-If you want to extend and customize the default theme, you can import it from `vitepress/theme` and augment it in a custom theme entry. Here are some examples of common customizations:
+如果你想扩展和自定义默认主题，您可以从 `vitepress/theme` 导入它并在导出自定义主题中对其进行扩展。 以下是一些常见自定义的示例：
 
-### Registering Global Components
+### 注册全局组件
 
 ```js
 // .vitepress/theme/index.js
@@ -110,17 +110,17 @@ import DefaultTheme from 'vitepress/theme'
 export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
-    // register global components
+    // 注册一个全局组件
     app.component('MyGlobalComponent', /* ... */)
   }
 }
 ```
 
-Since we are using Vite, you can also leverage Vite's [glob import feature](https://vitejs.dev/guide/features.html#glob-import) to auto register a directory of components.
+由于我们使用 Vite，你还可以利用 Vite 的 [全局导入特性](https://vitejs.dev/guide/features.html#glob-import) 自动注册组件目录。
 
-### Customizing CSS
+### 自定义 CSS
 
-The default theme CSS is customizable by overriding root level CSS variables:
+默认主题 CSS 可通过覆盖根元素的 CSS 变量进行自定义：
 
 ```js
 // .vitepress/theme/index.js
@@ -138,11 +138,11 @@ export default DefaultTheme
 }
 ```
 
-See [default theme CSS variables](https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css) that can be overridden.
+请参阅可以被覆盖的 [默认的主题 CSS 变量](https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css).
 
-### Layout Slots
+### Layout 组件插槽
 
-The default theme's `<Layout/>` component has a few slots that can be used to inject content at certain locations of the page. Here's an example of injecting a component into the before outline:
+默认主题 `<Layout/>` 组件有一些插槽，可用于在页面的某些位置注入内容。 这是一个将组件注入到之前的大纲中的示例：
 
 ```js
 // .vitepress/theme/index.js
@@ -174,7 +174,7 @@ const { Layout } = DefaultTheme
 </template>
 ```
 
-Or you could use render function as well.
+或者你也可以使用渲染函数。
 
 ```js
 // .vitepress/theme/index.js
@@ -191,9 +191,9 @@ export default {
 }
 ```
 
-Full list of slots available in the default theme layout:
+默认主题布局中可用插槽的完整列表：
 
-- When `layout: 'doc'` (default) is enabled via frontmatter:
+- 当通过 frontmatter 开启 `layout: 'doc'` (default):
   - `doc-footer-before`
   - `doc-before`
   - `doc-after`
@@ -203,12 +203,12 @@ Full list of slots available in the default theme layout:
   - `aside-outline-after`
   - `aside-ads-before`
   - `aside-ads-after`
-- When `layout: 'home'` is enabled via frontmatter:
+- 当通过 frontmatter 开启  `layout: 'home'`:
   - `home-hero-before`
   - `home-hero-after`
   - `home-features-before`
   - `home-features-after`
-- Always:
+- 一定有的:
   - `layout-top`
   - `layout-bottom`
   - `nav-bar-title-before`

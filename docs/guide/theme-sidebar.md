@@ -1,6 +1,6 @@
-# Sidebar
+# 侧边栏
 
-The sidebar is the main navigation block for your documentation. You can configure the sidebar menu in `themeConfig.sidebar`.
+侧边栏是文档的主要导航块。 可以在 `themeConfig.sidebar` 中配置侧边栏菜单。
 
 ```js
 export default {
@@ -19,9 +19,9 @@ export default {
 }
 ```
 
-## The Basics
+## 基本使用
 
-The simplest form of the sidebar menu is passing in a single array of links.  The first level item defines the "section" for the sidebar. It should contain `text`, which is the title of the section, and `items` which are the actual navigation links.
+侧边栏菜单的最简单形式是传入一个链接数组。 第一级项目定义了侧边栏部分。 它应该包含`text`，即该部分的标题，以及 `items` ，即实际的导航链接。
 
 ```js
 export default {
@@ -48,7 +48,7 @@ export default {
 }
 ```
 
-Each `link` should specify the path to the actual file starting with `/`. If you add trailing slash to the end of link, it will show `index.md` of the corresponding directory.
+每个 `link` 都应该指定以 `/` 开头的实际文件的路径。 如果在链接末尾添加斜杠，它将显示相应目录的`index.md`。
 
 ```js
 export default {
@@ -66,11 +66,11 @@ export default {
 }
 ```
 
-## Multiple Sidebars
+## 多个侧边栏
 
-You may show different sidebar depending on the page path. For example, as shown on this site, you might want to create a separate sections of content in your documentation like "Guide" page and "Config" page.
+您可能会根据页面路径显示不同的侧边栏。 例如，如本网站所示，您可能希望在文档中创建单独的内容部分，例如“指南”页面和“配置”页面。
 
-To do so, first organize your pages into directories for each desired section:
+为此，首先将你的页面放到所在的目录中：
 
 ```
 .
@@ -84,14 +84,13 @@ To do so, first organize your pages into directories for each desired section:
    └─ four.md
 ```
 
-Then, update your configuration to define your sidebar for each section. This time, you should pass an object instead of an array.
+然后，更新配置以定义每个部分的侧边栏，不同的是，这次配置的是一个对象而不是数组。
 
 ```js
 export default {
   themeConfig: {
     sidebar: {
-      // This sidebar gets displayed when user is
-      // under `guide` directory.
+      // 当用户在 `指南` 目录页面下将会展示这个侧边栏
       '/guide/': [
         {
           text: 'Guide',
@@ -104,8 +103,7 @@ export default {
         }
       ],
 
-      // This sidebar gets displayed when user is
-      // under `config` directory.
+      // 当用户在 `配置` 目录页面下将会展示这个侧边栏
       '/config/': [
         {
           text: 'Config',
@@ -122,9 +120,9 @@ export default {
 }
 ```
 
-## Collapsible Sidebar Groups
+## 可折叠的侧边栏组
 
-By adding `collapsible` option to the sidebar group, it shows a toggle button to hide/show each section.
+通过向侧边栏组添加 `collapsible` 选项，它会显示一个切换按钮来隐藏/显示子菜单。
 
 ```js
 export default {
@@ -145,7 +143,7 @@ export default {
 }
 ```
 
-All sections are "open" by default. If you would like them to be "closed" on initial page load, set `collapsed` option to `true`.
+默认情况下，所有侧边栏都是展开的。 如果你希望它们在初始页面加载时关闭，请将 `collapsed` 选项设置为 `true`。
 
 ```js
 export default {

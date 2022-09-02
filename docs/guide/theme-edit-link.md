@@ -1,6 +1,6 @@
-# Edit Link
+# 编辑链接
 
-Edit Link lets you display a link to edit the page on Git management services such as GitHub, or GitLab. To enable it, add `themeConfig.editLink` options to your config.
+编辑链接可以显示链接以编辑 Git 管理服务（例如 GitHub 或 GitLab）上的页面。 可以通过 `themeConfig.editLink` 选项配置来启用。
 
 ```js
 export default {
@@ -12,9 +12,9 @@ export default {
 }
 ```
 
-The `pattern` option defines the URL structure for the link, and `:path` is going to be replaced with the page path.
+`pattern` 选项定义了链接的 URL 结构，`:path` 将被页面路径替换。
 
-By default, this will add the link text "Edit this page" at the bottom of the doc page. You may customize this text by defining the `text` option.
+默认情况下，这将在文档页面底部添加链接文本“编辑此页面”。 您可以通过定义 `text` 选项来自定义此文本。
 
 ```js
 export default {

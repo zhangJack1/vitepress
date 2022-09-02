@@ -40,6 +40,13 @@ export default defineConfig({
     carbonAds: {
       code: 'CEBDT27Y',
       placement: 'vuejsorg'
+    },
+
+    lastUpdatedText: '最后更新',
+
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
     }
   }
 })
@@ -92,16 +99,16 @@ function sidebarGuide() {
       collapsible: true,
       items: [
         { text: '介绍', link: '/guide/theme-introduction' },
-        { text: 'Nav', link: '/guide/theme-nav' },
-        { text: 'Sidebar', link: '/guide/theme-sidebar' },
-        { text: 'Prev Next Link', link: '/guide/theme-prev-next-link' },
-        { text: 'Edit Link', link: '/guide/theme-edit-link' },
-        { text: 'Last Updated', link: '/guide/theme-last-updated' },
-        { text: 'Layout', link: '/guide/theme-layout' },
-        { text: 'Home Page', link: '/guide/theme-home-page' },
-        { text: 'Team Page', link: '/guide/theme-team-page' },
-        { text: 'Footer', link: '/guide/theme-footer' },
-        { text: 'Search', link: '/guide/theme-search' },
+        { text: '导航栏', link: '/guide/theme-nav' },
+        { text: '侧边栏', link: '/guide/theme-sidebar' },
+        { text: '上下页链接', link: '/guide/theme-prev-next-link' },
+        { text: '编辑链接', link: '/guide/theme-edit-link' },
+        { text: '最后更新时间', link: '/guide/theme-last-updated' },
+        { text: '布局', link: '/guide/theme-layout' },
+        { text: '首页', link: '/guide/theme-home-page' },
+        { text: '团队页面', link: '/guide/theme-team-page' },
+        { text: '页脚', link: '/guide/theme-footer' },
+        { text: '搜索', link: '/guide/theme-search' },
         { text: 'Carbon Ads', link: '/guide/theme-carbon-ads' }
       ]
     },

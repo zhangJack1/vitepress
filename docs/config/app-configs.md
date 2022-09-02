@@ -1,6 +1,6 @@
-# App Configs
+# 应用配置
 
-App configs are where you can define the global settings of the site. App configs define fundamental settings that are not only limited to the theme configs such as configuration for "base directory", or the "title" of the site.
+应用配置是定义站点的全局配置的地方。应用配置定义了不仅限于主题配置的基本设置，例如“基本目录”的配置或站点的“标题”。
 
 ```ts
 export default {
@@ -17,9 +17,9 @@ export default {
 - Type: `boolean`
 - Default: `true`
 
-Whether to enable "Dark Mode" or not. If the option is set to `true`, it adds `.dark` class to the `<html>` tag depending on the users preference.
+是否启用“暗模式”。 如果该选项设置为 `true`，它会根据用户偏好将 `.dark` 类添加到 `<html>` 标签中。
 
-It also injects inline script that tries to read users settings from local storage by `vitepress-theme-appearance` key and restores users preferred color mode.
+同时还注入内联样式脚本，并尝试通过 `vitepress-theme-appearance` key 从本地存储读取用户设置，并恢复用户首选的颜色模式。
 
 ```ts
 export default {
@@ -32,9 +32,9 @@ export default {
 - Type: `string`
 - Default: `/`
 
-The base URL the site will be deployed at. You will need to set this if you plan to deploy your site under a sub path, for example, GitHub pages. If you plan to deploy your site to `https://foo.github.io/bar/`, then you should set base to `'/bar/'`. It should always start and end with a slash.
+部署站点的 base URL。如果您计划在子路径（例如 GitHub 页面）下部署站点，则需要设置此项。 如果你打算将你的站点部署到`https://foo.github.io/bar/`，那么你应该将base设置为`'/bar/'`。 它应该始终以斜线开头和结尾。
 
-The base is automatically prepended to all the URLs that start with / in other options, so you only need to specify it once.
+base 会自动添加到其他选项中以 / 开头的所有 URL，因此您只需指定一次。>
 
 ```ts
 export default {
@@ -47,7 +47,7 @@ export default {
 - Type: `string`
 - Default: `A VitePress site`
 
-Description for the site. This will render as a `<meta>` tag in the page HTML.
+网站的描述。 这将在页面 HTML 中呈现为 `<meta>` 标记。
 
 ```ts
 export default {
@@ -60,7 +60,7 @@ export default {
 - Type: `HeadConfig[]`
 - Default: `[]`
 
-Additional elements to render in the `<head>` tag in the page HTML. The user-added tags are rendered before the closing `head` tag, after VitePress tags.
+添加到HTML 的 `<head>` 标记中呈现的其他元素。用户添加的标签在结束 `head` 标签之前呈现，在 VitePress 标签之后。
 
 ```ts
 export default {
@@ -82,7 +82,7 @@ type HeadConfig =
 - Type: `boolean`
 - Default: `false`
 
-When set to `true`, VitePress will not fail builds due to dead links.
+当设置为 `true` 时，VitePress 不会因为无效链接而导致构建失败。
 
 ```ts
 export default {
@@ -95,7 +95,7 @@ export default {
 - Type: `string`
 - Default: `en-US`
 
-The lang attribute for the site. This will render as a `<html lang="en-US">` tag in the page HTML.
+站点的 lang 属性。 这将在页面 HTML 中呈现为 `<html lang="en-US">` 标签。
 
 ```ts
 export default {
@@ -108,7 +108,7 @@ export default {
 - Type: `boolean`
 - Default: `false`
 
-Use git commit to get the timestamp. This option enables the default theme to display the page's last updated time. You can customize the text via [`themeConfig.lastUpdatedText`](theme-configs#lastupdatedtext) option.
+使用 git commit 获取时间戳。 此选项启用默认主题以显示页面的最后更新时间。 您可以通过 [`themeConfig.lastUpdatedText`](theme-configs#lastupdatedtext) 选项自定义文本。
 
 ```ts
 export default {
@@ -120,7 +120,7 @@ export default {
 
 - Type: `MarkdownOption`
 
-Configure Markdown parser options. VitePress uses [Markdown-it](https://github.com/markdown-it/markdown-it) as the parser, and [Shiki](https://shiki.matsu.io/) to highlight language syntax. Inside this option, you may pass various Markdown related options to fit your needs.
+配置 Markdown 解析器选项。 VitePress 使用 [Markdown-it](https://github.com/markdown-it/markdown-it) 作为解析器，使用 [Shiki](https://shiki.matsu.io/) 高亮语言语法。 在此选项中，您可以传递各种 Markdown 相关选项以满足您的需求。
 
 ```js
 export default {
@@ -131,20 +131,20 @@ export default {
 }
 ```
 
-Below are all the options that you can have in this object:
+以下是您可以在此对象中拥有的所有选项：
 
 ```ts
 interface MarkdownOptions extends MarkdownIt.Options {
-  // Custom theme for syntax highlighting.
-  // You can use an existing theme.
-  // See: https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
-  // Or add your own theme.
-  // See: https://github.com/shikijs/shiki/blob/main/docs/themes.md#loading-theme
+  // 自定义主题来高亮语法
+  // 可以使用现有的主题。
+  // 参考: https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
+  // 或者添加自己的主题.
+  // 参考: https://github.com/shikijs/shiki/blob/main/docs/themes.md#loading-theme
   theme?:
     | Shiki.IThemeRegistration
     | { light: Shiki.IThemeRegistration; dark: Shiki.IThemeRegistration }
 
-  // Enable line numbers in code block.
+  // 在代码块中启用行号。
   lineNumbers?: boolean
 
   // markdown-it-anchor plugin options.
@@ -186,7 +186,7 @@ interface MarkdownOptions extends MarkdownIt.Options {
 - Type: `string`
 - Default: `./.vitepress/dist`
 
-The build output location for the site, relative to project root (`docs` folder if you're running `vitepress build docs`).
+站点的构建输出位置，相对于项目根目录（如果您正在运行 `vitepress build docs`，则为 `docs` 文件夹）。
 
 ```ts
 export default {
@@ -199,7 +199,7 @@ export default {
 - Type: `string`
 - Default: `VitePress`
 
-Title for the site. This will be displayed in the nav bar. Also used as the suffix for all page titles unless `titleTemplate` is defined.
+网站的标题。 这将显示在导航栏中。也用作所有页面标题的后缀，除非定义了 `titleTemplate`。
 
 ```ts
 export default {
@@ -211,9 +211,9 @@ export default {
 
 - Type: `string | boolean`
 
-The suffix for the title. For example, if you set `title` as `VitePress` and set `titleTemplate` as `My Site`, the html title becomes `VitePress | My Site`.
+标题的后缀。 例如，如果您将 `title` 设置为 `VitePress` 并将 `titleTemplate` 设置为 `我的网站`，则 html 标题变为 `VitePress | 我的网站`。
 
-Set `false` to disable the feature. If the option is `undefined`, then the value of `title` option will be used.
+设置 `false` 以禁用该功能。 如果选项是 `undefined`，那么将使用 `title` 选项的值。
 
 ```ts
 export default {
@@ -222,12 +222,12 @@ export default {
 }
 ```
 
-## cleanUrls (Experimental)
+## cleanUrls (试验性的)
 
 - Type: `'disabled' | 'without-subfolders' | 'with-subfolders'`
 - Default: `'disabled'`
 
-Allows removing trailing `.html` from URLs and, optionally, generating clean directory structure. Available modes:
+允许从 URL 中删除后面的“.html”，并且可以选择生成干净的目录结构。可用模式有：
 
 |          Mode          |   Page    |  Generated Page   |     URL     |
 | :--------------------: | :-------: | :---------------: | :---------: |
@@ -235,9 +235,9 @@ Allows removing trailing `.html` from URLs and, optionally, generating clean dir
 | `'without-subfolders'` | `/foo.md` |    `/foo.html`    |   `/foo`    |
 |  `'with-subfolders'`   | `/foo.md` | `/foo/index.html` |   `/foo`    |
 
-::: warning
+::: warning 警告
 
-Enabling this may require additional configuration on your hosting platform. For it to work, your server must serve the generated page on requesting the URL (see above table) **without a redirect**.
+启用此功能可能需要在您的托管平台上进行额外配置。 要使其正常工作，您的服务器必须在请求 URL 时为生成的页面提供**无需重定向**的服务（见上表）。
 
 :::
 

@@ -1,6 +1,6 @@
-# Theme Configs
+# 主题配置
 
-Theme configs let you customize your theme. You can define theme configs by adding `themeConfig` key to the config file.
+主题配置可让您自定义主题。 您可以通过将 `themeConfig` 键添加到配置文件来定义主题配置。
 
 ```ts
 export default {
@@ -17,13 +17,13 @@ export default {
 }
 ```
 
-Here it describes the settings for the VitePress default theme. If you're using a custom theme created by others, these settings may not have any effect, or might behave differently.
+这里描述了 VitePress 默认主题的设置。 如果您使用的是其他人创建的自定义主题，这些设置可能没有任何效果，或者可能表现不同。
 
 ## logo
 
 - Type: `ThemeableImage`
 
-Logo file to display in nav bar, right before the site title. Accepts a path string, or an object to set a different logo for light/dark mode.
+显示在导航栏中的logo文件，位于站点标题之前。接受路径字符串或包含亮/暗模式不同logo的对象。
 
 ```ts
 export default {
@@ -42,7 +42,7 @@ type ThemeableImage = Image | { light: Image; dark: Image }
 
 - Type: `string | false`
 
-You can customize this item to replace the default site title (`title` in app config) in nav. When set to `false`, title in nav will be disabled. Useful when you have `logo` that already contains the site title text.
+您可以自定义此项以替换导航中的默认站点标题（应用配置中的`title`）。 当设置为 `false` 时，导航中的标题将被禁用。 这在当你的 `logo` 已经包含网站标题文本时很有用。
 
 ```ts
 export default {
@@ -56,7 +56,7 @@ export default {
 
 - Type: `NavItem`
 
-The configuration for the nav menu item. You may learn more details at [Theme: Nav](../guide/theme-nav#navigation-links).
+导航菜单项的配置。 您可以在 [主题: 导航栏](../guide/theme-nav#navigation-links) 了解更多详情。
 
 ```js
 export default {
@@ -96,7 +96,7 @@ interface NavItemWithChildren {
 
 - Type: `Sidebar`
 
-The configuration for the sidebar menu item. You may learn more details at [Theme: Sidebar](../guide/theme-sidebar).
+侧边栏菜单项的配置。 您可以在 [主题: 侧边栏](../guide/theme-sidebar) 了解更多详情。
 
 ```js
 export default {
@@ -140,7 +140,7 @@ interface SidebarItem {
 - Type: `string`
 - Default: `On this page`
 
-Can be used to customize the title of the right sidebar (on the top of outline links). This is useful when writing documentation in another language.
+可用于自定义右侧边栏的标题（在大纲链接的顶部）。 这在用另一种语言编写文档时很有用。
 
 ```js
 export default {
@@ -154,7 +154,7 @@ export default {
 
 - Type: `SocialLink[]`
 
-You may define this option to show your social account links with icons in nav.
+您可以定义此选项以在导航中展示带有图标的社交帐户链接。
 
 ```js
 export default {
@@ -162,7 +162,7 @@ export default {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
       { icon: 'twitter', link: '...' },
-      // You can also add custom icons by passing SVG as string:
+      // 你也可以自定义svg的icon:
       {
         icon: {
           svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Dribbble</title><path d="M12...6.38z"/></svg>'
@@ -196,7 +196,7 @@ type SocialLinkIcon =
 
 - Type: `Footer`
 
-Footer configuration. You can add a message and copyright. The footer will displayed only when the page doesn't contain sidebar due to design reason.
+页脚配置。 您可以添加 message 和copyright。 由于设计原因，仅当页面不包含侧边栏时才会显示页脚。
 
 ```ts
 export default {
@@ -220,7 +220,7 @@ export interface Footer {
 
 - Type: `EditLink`
 
-Edit Link lets you display a link to edit the page on Git management services such as GitHub, or GitLab. See [Theme: Edit Link](../guide/theme-edit-link) for more details.
+编辑链接可让您显示链接以编辑 Git 管理服务（例如 GitHub 或 GitLab）上的页面。 有关详细信息，请参阅 [主题：编辑链接](../guide/theme-edit-link)。
 
 ```js
 export default {
@@ -245,7 +245,7 @@ export interface EditLink {
 - Type: `string`
 - Default: `Last updated`
 
-The prefix text showing right before the last updated time.
+显示上次更新时间之前的前缀文本。
 
 ```ts
 export default {
@@ -259,7 +259,7 @@ export default {
 
 - Type: `CarbonAds`
 
-A option to display [Carbon Ads](https://www.carbonads.net/).
+一个选项用来展示 [Carbon Ads](https://www.carbonads.net/).
 
 ```ts
 export default {
@@ -279,13 +279,13 @@ export interface CarbonAds {
 }
 ```
 
-Learn more in [Theme: Carbon Ads](../guide/theme-carbon-ads)
+了解更多 [Theme: Carbon Ads](../guide/theme-carbon-ads)
 
 ## docFooter
 
 - Type: `DocFooter`
 
-Can be used to customize text appearing above previous and next links. Helpful if not writing docs in English.
+可用于自定义出现在上一个和下一个链接上方的文本。 如果不是用英语编写文档，这很有帮助。
 
 ```js
 export default {

@@ -1,14 +1,14 @@
 # API Reference
 
-VitePress offers several built in API to let you access app data. VitePress also comes with few built-in component that can be used globally.
+VitePress 提供了几个内置 API 来获取应用程序数据。 VitePress 还提供了一些可以可全局使用的内置组件。
 
-The helper methods are globally importable from `vitepress` and are typically used in custom theme Vue components. However, they are also usable inside `.md` pages because markdown files are compiled into Vue single-file components.
+可以从 `vitepress` 全局引入辅助函数，通常用于自定义主题 Vue 组件。 当然，它们也可以在 .md 页面中使用，因为 Markdown 文件会被编译成 Vue 单文件组件。
 
-Methods that start with `use*` indicates that it is a [Vue 3 Composition API](https://vuejs.org/guide/introduction.html#composition-api) function that can only be used inside `setup()` or `<script setup>`.
+以`use*`开头的方法表示它是一个[Vue 3 Composition API](https://vuejs.org/guide/introduction.html#composition-api)函数，只能在`setup()`内部使用或者使用`<script setup>`。
 
 ## `useData`
 
-Returns page-specific data. The returned object has the following type:
+返回页面的属性数据，返回的对象具有以下类型：
 
 ```ts
 interface VitePressData {
@@ -23,7 +23,7 @@ interface VitePressData {
 }
 ```
 
-**Example:**
+**例子:**
 
 ```vue
 <script setup>
@@ -39,7 +39,7 @@ const { theme } = useData()
 
 ## `useRoute`
 
-Returns the current route object with the following type:
+返回具有以下类型的当前路由对象：
 
 ```ts
 interface Route {
@@ -51,7 +51,7 @@ interface Route {
 
 ## `useRouter`
 
-Returns the VitePress router instance so you can programmatically navigate to another page.
+返回 VitePress 路由实例，用来以编程方式导航到另一个页面。
 
 ```ts
 interface Router {
@@ -64,11 +64,11 @@ interface Router {
 
 - **Type**: `(path: string) => string`
 
-Appends the configured [`base`](../config/app-configs#base) to a given URL path. Also see [Base URL](./asset-handling#base-url).
+将配置的 [`base`](../config/app-configs#base) 添加到给定的 URL 路径。 另请参阅 [Base URL](./asset-handling#base-url)。
 
 ## `<Content />`
 
-The `<Content />` component displays the rendered markdown contents. Useful [when creating your own theme](./theme-introduction).
+`<Content />` 组件显示渲染的 markdown 内容。 在[创建自己的主题时](./theme-introduction)有用。
 
 ```vue
 <template>
@@ -79,11 +79,11 @@ The `<Content />` component displays the rendered markdown contents. Useful [whe
 
 ## `<ClientOnly />`
 
-The `<ClientOnly />` component renders its slot only at client side.
+`<ClientOnly />` 组件只在客户端渲染它的插槽。
 
-Because VitePress applications are server-rendered in Node.js when generating static builds, any Vue usage must conform to the universal code requirements. In short, make sure to only access Browser / DOM APIs in beforeMount or mounted hooks.
+由于 VitePress 应用在生成静态文件之后会在 Node.js 中进行服务端渲染，因此任何 Vue 使用都必须符合通用代码要求。 简而言之，确保只在 beforeMount 或mounted 钩子中访问浏览器/DOM API。
 
-If you are using or demoing components that are not SSR-friendly (for example, contain custom directives), you can wrap them inside the `ClientOnly` component.
+如果您正在使用不支持 SSR 的组件（例如，包含自定义指令），你可以将它们包装在 `ClientOnly` 组件中。
 
 ```vue-html
 <ClientOnly>
