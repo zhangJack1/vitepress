@@ -34,7 +34,7 @@ export default {
 
 部署站点的 base URL。如果您计划在子路径（例如 GitHub 页面）下部署站点，则需要设置此项。 如果你打算将你的站点部署到`https://foo.github.io/bar/`，那么你应该将base设置为`'/bar/'`。 它应该始终以斜线开头和结尾。
 
-base 会自动添加到其他选项中以 / 开头的所有 URL，因此您只需指定一次。>
+base 会自动添加到其他选项中以 / 开头的所有 URL，因此您只需指定一次。
 
 ```ts
 export default {
