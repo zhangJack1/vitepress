@@ -19,12 +19,12 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
-      text: 'Edit this page on GitHub'
+      pattern: 'https://github.com/process1024/vitepress/edit/main/docs/:path',
+      text: '在 github 上编辑此页'
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/process1024/vitepress' }
     ],
 
     footer: {
