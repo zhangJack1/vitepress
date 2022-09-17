@@ -179,7 +179,7 @@ const partners = [...]
 ```ts
 interface Props {
   // Size of each members. Defaults to `medium`.
-  size?: 'small' | 'meidum'
+  size?: 'small' | 'medium'
 
   // List of members to display.
   members: TeamMember[]
