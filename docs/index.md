@@ -17,7 +17,7 @@ hero:
       link: https://github.com/vuejs/vitepress
 
 features:
-  - title: "Vite: The DX that can't be beat"
+  - title: "Vite: 无可比拟的开发体验"
     details: 感受Vite的速度。无论应用程序大小如何，都能保持快速的即时服务器启动和闪电般快速的 HMR。
   - title: 以简单易用为首要的设计
     details: 使用以 Markdown 为中心的内容，它旨在帮助你专注于编写和以最少的配置进行部署
