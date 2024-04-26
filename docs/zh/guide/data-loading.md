@@ -29,6 +29,7 @@ import { data } from './example.data.js'
 </script>
 
 <pre>{{ data }}</pre>
+你
 ```
 
 输出：
