@@ -214,3 +214,5 @@ $ bun vitepress dev docs
 - 如果想进一步自定义站点的外观，参见[扩展默认主题](./extending-default-theme)或者[构建自定义主题](./custom-theme)。
 
 - 文档成形以后，务必阅读[部署指南](./deploy)。
+
+- 知识测试
